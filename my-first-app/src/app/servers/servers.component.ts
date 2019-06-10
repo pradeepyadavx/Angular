@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TargetLocator } from 'selenium-webdriver';
+ 
 
 @Component({
   // can be used as deirect elemnt
@@ -21,7 +23,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer=false;
-  servrCreationStaus='server is not created'
+  servrCreationStaus='server is not created';
+  serverName=' test server'
 
   constructor() {
     setTimeout(() => {
@@ -34,5 +37,9 @@ export class ServersComponent implements OnInit {
 
   onCreateServer(){
     this.servrCreationStaus='server is created '
+  }
+
+  onUpdateServerName(event:any){
+        this.serverName=(<HTMLInputElement>event.target).value;
   }
 }
