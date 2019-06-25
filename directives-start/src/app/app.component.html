@@ -39,5 +39,10 @@
       <p  appBasicHighLight> make me greem with basic highlight directive</p>
       <p  [appBetterHightlight]="'blue'" defaultColor="yellow" > make me greem with better highlight directive</p>
       </div>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">this is 5</p>
+        <p  *ngSwitchCase="10">this is 10</p>
+        <p *ngSwitchDefault> this is default</p>
+      </div>
   </div>
 </div>
