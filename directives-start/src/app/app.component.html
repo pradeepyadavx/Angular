@@ -16,7 +16,7 @@
           </li>
         </div>
         
-        <div *ngIf="!onlyOdd">
+       <!--  <div *ngIf="!onlyOdd">
             <li
             class="list-group-item"
             [ngClass]="{odd: even % 2 !==0 }"
@@ -24,8 +24,17 @@
             *ngFor="let even of evenNumber">
             {{ even}}
           </li>
-        </div>
-       
+        </div> -->
+
+        <div *appUnless="onlyOdd">
+          <li
+          class="list-group-item"
+          [ngClass]="{odd: even % 2 !==0 }"
+          [ngStyle]="{ backgroundColor: even % 2 !==0 ? 'yellow': 'transparent'}"
+          *ngFor="let even of evenNumber">
+          {{ even}}
+        </li>
+      </div>
       </ul>
       <p  appBasicHighLight> make me greem with basic highlight directive</p>
       <p  [appBetterHightlight]="'blue'" defaultColor="yellow" > make me greem with better highlight directive</p>
