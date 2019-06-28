@@ -1,15 +1,24 @@
 import { Recipe } from './recipe.model';
 import { EventEmitter } from '@angular/core';
+import { Ingredient } from './shared/ingredient.model';
 
 export class RecipeService {
 
   recipeSelected= new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
-    new Recipe('Test recipe1', 'Desc  of test recipe 1', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Test recipe2', 'Desc  of test recipe 2', 'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/03/04141012/lime-roasted-salmon-skillet-square-500x500.jpg'),
-    new Recipe('Test recipe3', 'Desc  of test recipe 3', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
-    new Recipe('Test recipe4', 'Desc  of test recipe 4', 'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2019/03/04141012/lime-roasted-salmon-skillet-square-500x500.jpg')
+    new Recipe('Tasty Schintzel', 'A super-tasty Schintzel - just Awsome', 'https://www.recipetineats.com/wp-content/uploads/2017/08/Schnitzel-9.jpg',
+    [
+        new Ingredient("Meat",1),
+        new Ingredient("French Fries",20),
+
+    ]),
+    new Recipe('Big Fat Burger', 'What else You need to Say', 'https://media.giphy.com/media/WBTUlyKBVlTTa/giphy.gif',
+    [
+      new Ingredient("Bun",2),
+      new Ingredient("Meat",1)
+        
+    ])
   ];
 
   getRecipes() {
