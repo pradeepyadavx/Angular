@@ -8,6 +8,7 @@ import { ServerComponent } from "./servers/server/server.component";
 import { EditServerComponent } from "./servers/edit-server/edit-server.component";
 import { PathNotFoundComponent } from "./path-not-found/path-not-found.component";
 import { AuthGuard } from "./auth-guard.service";
+import { ErrorComponent } from "./error/error.component";
 
 
 const appRoute: Routes = [
@@ -22,7 +23,8 @@ const appRoute: Routes = [
       { path: ':id', component:ServerComponent  },
       { path: ':id/edit', component:EditServerComponent  }
     ]  },
-    { path:'not-found',component:PathNotFoundComponent },
+    //{ path:'not-found',component:PathNotFoundComponent },
+    { path:'not-found',component:ErrorComponent ,data:{message:"Page Not found"} },
     { path: '**' ,redirectTo:'not-found'}
    
   ];

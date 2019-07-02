@@ -15,6 +15,7 @@ import { PathNotFoundComponent } from './path-not-found/path-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth-service';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -28,7 +29,8 @@ import { AuthService } from './auth-service';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PathNotFoundComponent
+    PathNotFoundComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
