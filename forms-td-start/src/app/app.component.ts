@@ -8,10 +8,14 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('f') data:NgForm;
+
+  defaultQuestion='teacher'
+
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
 
+  
 
 
   onSubmit(form:NgForm){
