@@ -13,6 +13,16 @@ export class AppComponent {
   answer='';
   genders=['male','female']
 
+  user={
+    'username':'',
+    'email':'',
+    'secret':'',
+    'qanswer':'',
+    'gender':''
+  }
+
+  isSubmiited=false;
+
   suggestUserName() {
     const suggestedName = 'Superuser';
     // # using set value
@@ -39,7 +49,15 @@ export class AppComponent {
 
 
   onSubmit(form:NgForm){
-    console.log(form);
+    // console.log(form);
    // console.log(this.signupform);
+   this.isSubmiited=true;
+   this.user.username=this.signupform.value.userdata.username;
+   this.user.email=this.signupform.value.userdata.email;
+   this.user.secret=this.signupform.value.secret;
+   this.user.qanswer=this.signupform.value.questionAnser;
+   this.user.gender=this.signupform.value.gender;
   }
+
+ 
 }
