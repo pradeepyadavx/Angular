@@ -67,6 +67,12 @@
         type="submit"
          [disabled]="!f.valid">Submit</button>
 
+         <button 
+         class="btn btn-primary" 
+         type="submit"
+         (click)="onclear()"
+          [disabled]="!f.valid">clear</button>
+
        
       </form>
     </div>

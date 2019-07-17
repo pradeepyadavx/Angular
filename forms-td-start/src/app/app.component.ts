@@ -58,6 +58,19 @@ export class AppComponent {
    this.user.qanswer=this.signupform.value.questionAnser;
    this.user.gender=this.signupform.value.gender;
 
+   //this.signupform.reset();
+  }
+
+  onclear(){
+    // console.log(form);
+   //console.log(this.signupform);
+   this.isSubmiited=true;
+   this.user.username=""
+   this.user.email="";
+   this.user.secret="";
+   this.user.qanswer="";
+   this.user.gender="";
+
    this.signupform.reset();
   }
 
