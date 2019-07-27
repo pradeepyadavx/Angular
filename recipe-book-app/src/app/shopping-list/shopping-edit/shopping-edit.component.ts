@@ -25,6 +25,7 @@ export class ShoppingEditComponent implements OnInit,OnDestroy {
     this.subscription=this.shoppingListService.startEditing.subscribe(
       (index:number)=>{
         this.edeitIteMIndex=index;
+        this.editMode=true;
         this.edititem=this.shoppingListService.getIngredient(index);
         this.slForm.setValue({
           name:this.edititem.name,
@@ -41,6 +42,14 @@ export class ShoppingEditComponent implements OnInit,OnDestroy {
     const value=form.value;
     const newIngredient= new Ingredient(value.name,value.amount);
     //this.shoppingListService.ingredientAdded.emit(newIngredient);
-    this.shoppingListService.addIngredient(newIngredient);
+    if (this.editMode){
+      console.log('yes');
+      this.shoppingListService.updateIngredient(this.edeitIteMIndex,newIngredient)
+    }else{
+      this.shoppingListService.addIngredient(newIngredient);
+    }
+    this.editMode=false
+    form.reset()
+    
   }
 }
